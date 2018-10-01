@@ -7,10 +7,9 @@ node_js:
 services:
   - docker
 
-before_install:
+script:
   - docker build -t scouser/docker-nodejs .
   - docker run -p http://128.199.52.234:8080 scouser/docker-nodejs
-  - docker ps -a
 
-  script:
-    - node server.js
+after_script:
+  - docker images
