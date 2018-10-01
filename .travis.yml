@@ -5,7 +5,7 @@ services:
 
 script:
   - docker build -t scouser/docker-nodejs .
-  - docker run -p http://128.199.52.234:8080 scouser/docker-nodejs
+  - docker run -p 8080:8080 scouser/docker-nodejs
 
 after_script:
   - docker images
