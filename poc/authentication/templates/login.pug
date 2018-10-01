@@ -1,0 +1,16 @@
+doctype html
+html
+    head
+        title Log in
+        link(rel="stylesheet", type="text/css", href="css/style.css")
+    body
+        form.general-form(action="/login", method="post")
+            h1 Log in
+            div
+                input.inputs(type="text", name="username", placeholder="Username")
+            div
+                input.inputs(type="password", name="password", placeholder="Password")
+            div
+                a(href="/signup") Don't have an account? Sign up
+            div
+                button.buttons Log in

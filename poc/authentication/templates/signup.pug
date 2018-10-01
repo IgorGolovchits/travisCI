@@ -1,0 +1,16 @@
+doctype html
+html
+    head
+        title Sign up page
+        link(rel="stylesheet", type="text/css", href="css/style.css")
+    body
+        form.general-form(action="/signup", method="post")
+            h1 Sign up
+            div
+                input.inputs(type="text", name="username", placeholder="Username")
+            div
+                input.inputs(type="text", name="email", placeholder="Email")
+            div
+                input.inputs(type="password", name="password", placeholder="Password")
+            div
+                button.buttons Sign up
