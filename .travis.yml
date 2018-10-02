@@ -8,13 +8,13 @@ addons:
 
 before_install:
 - openssl aes-256-cbc -K $encrypted_ef18491c53fd_key -iv $encrypted_ef18491c53fd_iv
-  -in docker-digitalocean-droplet -out ./docker-digitalocean-droplet -d
-- ssh-add ./docker-digitalocean-droplet
+  -in docker-digitalocean-droplet.enc -out ./docker-digitalocean-droplet -d
+- ssh-add ./docker-digitalocean-droplet.enc
 - eval "$(ssh-agent -s)"
-- chmod 600 ./docker-digitalocean-droplet
+- chmod 600 ./docker-digitalocean-droplet.enc
 - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-- ssh-add ./docker-digitalocean-droplet
-- ssh -i ./docker-digitalocean-droplet root@128.19.52.234 pwd
+- ssh-add ./docker-digitalocean-droplet.enc
+- ssh -i ./docker-digitalocean-droplet.enc root@128.19.52.234 pwd
 
 
 script:
