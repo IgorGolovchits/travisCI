@@ -1,11 +1,8 @@
 sudo: required
-
 services:
-  - docker
-
+- docker
 addons:
   ssh_known_hosts: 128.199.52.234
-
 before_install:
 - openssl aes-256-cbc -K $encrypted_ef18491c53fd_key -iv $encrypted_ef18491c53fd_iv
   -in deploy_key.enc -out ./deploy_key -d
@@ -14,11 +11,8 @@ before_install:
 - echo -e "Host 128.199.52.234\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ssh-add ./deploy_key
 - ssh -i ./deploy_key root@128.199.52.234 pwd
-
-
 script:
-  - docker build -t scouser/docker-nodejs .
-  - docker run -p 8080:8080 scouser/docker-nodejs
-
+- docker build -t scouser/docker-nodejs .
+- docker run -p 8080:8080 scouser/docker-nodejs
 after_script:
-  - docker images
+- docker images
