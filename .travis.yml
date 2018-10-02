@@ -3,6 +3,10 @@ sudo: required
 services:
   - docker
 
+before_install:
+- openssl aes-256-cbc -K $encrypted_ef18491c53fd_key -iv $encrypted_ef18491c53fd_iv
+  -in docker-digitalocean-droplet.enc -out ./docker-digitalocean-droplet -d
+
 script:
   - docker build -t scouser/docker-nodejs .
   - docker run -p 8080:8080 scouser/docker-nodejs
