@@ -5,7 +5,7 @@ addons:
   ssh_known_hosts: 128.199.52.234
 env:
   global:
-  - secure: Zw0S/YvY8yACbxuUXUNguU9gREmCivi3NIOg60LoKJ1W+xEs5UVfgepua+tpOlW3hHc5NocBDzD3U4lwYI6BspmUB3ecYXlD6kfaQmjv9zHL4jxtB4cn9DkR1zyIclGq5fKhekmZE9FHTtamTJfY6O/xlIGf6aE2fhNu6M+bSrd0mA7Y+guzsNc9uyeRwOG6v/K7Jn6CM6D21IY4aM8RXoS7UzBf8oAajL2ZOCHbM6SY6cTrJIr5b6+v9MLzv9wPjBzR12WGo5N8vRzzmow6bN05B1VQvvm3YCkv51DKIdAE1zBniGUFMLvlLxCJ1TKjUKZh9ceVmV91mGWo1EfiLqlz1t5g2TzSV1KV2SOvGYntoZPvOfijERg6BEu5poqdJLj/XcMb35o/h5ZcLtTlbI33uA81dq7gZMCbpmvBXnzajZfSEJ2cieHVASBzRPZCyPm655akUG5smVlYt3iRG45T/t3YrkdQAxoRw3nvsM3BAYXwNcLycv4T8DZQGuilJ+FYbh2WxVnOrj1iwaeVt0MtX0ibwrWQyEF6xTyS6kOSFULPqp76ihnWJHu74IXkpHkUxUlmBbLRs+wvWE3FWZZUGXqPbBwyHNkOLRVGlbTeLsUMg/zF00mM5UsQ8XPnw1yzsDRdjC+CzovM9Bjl2J0pzGALD6OBjKzeVA4mGfw=
+    secure:
 before_install:
 - openssl aes-256-cbc -k "$super_secret_password" -in super_secret.txt.enc -out super_secret.txt
   -d
