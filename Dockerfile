@@ -7,4 +7,3 @@ COPY ./poc /src/poc
 RUN npm install
 COPY . /app
 CMD node /src/poc/authentication/server.js
-EXPOSE 8080
