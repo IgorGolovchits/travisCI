@@ -3,7 +3,7 @@ services:
   web:
     image: scouser/docker-nodejs
     build: .
-    command:
+    command: node server.js
     ports:
       - "8080:8080"
     volumes:
