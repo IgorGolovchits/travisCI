@@ -5,12 +5,12 @@ addons:
   ssh_known_hosts: 128.199.52.234
 before_install:
 - openssl aes-256-cbc -K $encrypted_ef18491c53fd_key -iv $encrypted_ef18491c53fd_iv
-  -in new_key.enc -out ./new_key -d
+  -in deploy_key.enc -out ./deploy_key -d
 - eval "$(ssh-agent -s)"
-- chmod 600 ./new_key
+- chmod 600 ./deploy_key
 - echo -e "Host 128.199.52.234\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-- ssh-add ./new_key
-- ssh -i ./new_key root@128.199.52.234 pwd
+- ssh-add ./deploy_key
+- ssh -i ./deploy_key root@128.199.52.234 pwd
 script:
 - docker build -t scouser/docker-nodejs .
 - docker run -p 8080:8080 scouser/docker-nodejs
